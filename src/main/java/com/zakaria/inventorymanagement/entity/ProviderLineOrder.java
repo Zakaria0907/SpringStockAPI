@@ -1,12 +1,11 @@
 package com.zakaria.inventorymanagement.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -15,6 +14,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name= "providerlineorder")
 public class ProviderLineOrder extends AbstractEntity {
+	
+	@Column(name = "quantity")
+	private BigDecimal quantity;
+	
+	@Column(name = "unitprice")
+	private BigDecimal unitPrice;
 	
 	@ManyToOne
 	@JoinColumn(name = "product_id")
