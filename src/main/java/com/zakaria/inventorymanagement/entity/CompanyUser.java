@@ -1,18 +1,44 @@
 package com.zakaria.inventorymanagement.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.Instant;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name= "companyuser")
 public class CompanyUser extends AbstractEntity{
 	
-	private String name;
+	@Column(name = "firstname")
+	private String firstname;
+	
+	@Column(name = "lastname")
+	private String lastname;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "dateofbirth")
+	private Instant dateOfBirth;
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Embedded
+	private Address address;
+	
+	@Column(name = "photo")
+	private String photo;
+	
+	@ManyToOne
+	@JoinColumn(name = "company_id")
+	private Company company;
+	
+	@OneToMany(mappedBy = "companyUser")
+	private List<Role> roles;
 }

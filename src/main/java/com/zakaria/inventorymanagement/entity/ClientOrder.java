@@ -1,9 +1,6 @@
 package com.zakaria.inventorymanagement.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.List;
@@ -13,14 +10,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name= "clientorder")
 public class ClientOrder extends AbstractEntity {
 	
 	@Column(name = "code")
 	private String code;
 	
-	@Column(name = "date")
-	private Instant date;
+	@Column(name = "orderdate")
+	private Instant OrderDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "client_id")

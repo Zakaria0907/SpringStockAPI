@@ -1,8 +1,5 @@
 package com.zakaria.inventorymanagement.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,5 +19,9 @@ public class SaleLineItem extends AbstractEntity {
 	@JoinColumn(name = "sale_id")
 	private Sale sale;
 	
+	@Column(name = "quantity")
 	private BigDecimal quantity;
+	
+	@Column(name = "unitprice")
+	private BigDecimal unitPrice;
 }

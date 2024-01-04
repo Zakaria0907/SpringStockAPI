@@ -1,9 +1,6 @@
 package com.zakaria.inventorymanagement.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -12,6 +9,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "item")
 public class Item extends AbstractEntity{
 	
@@ -21,14 +19,14 @@ public class Item extends AbstractEntity{
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "unitpricebt")
-	private BigDecimal unitPriceBT;
+	@Column(name = "unitpricebeforetax")
+	private BigDecimal unitPriceBeforeTax;
 	
 	@Column(name = "tax")
 	private BigDecimal tax;
 	
-	@Column(name = "unitpriceat")
-	private BigDecimal unitPriceAT;
+	@Column(name = "unitpriceaftertax")
+	private BigDecimal unitPriceAfterTax;
 	
 	@Column(name = "photo")
 	private String photo;
