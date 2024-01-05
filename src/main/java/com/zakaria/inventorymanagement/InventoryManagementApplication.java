@@ -10,5 +10,6 @@ public class InventoryManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InventoryManagementApplication.class, args);
 	}
-
+	
+	// TODO: view devtiro chapter 10.2 to see how to implement mapper, dto, etc.
 }
