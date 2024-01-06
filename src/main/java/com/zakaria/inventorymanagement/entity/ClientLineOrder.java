@@ -14,6 +14,9 @@ import java.util.Date;
 @Table(name= "clientlineorder")
 public class ClientLineOrder extends AbstractEntity {
 	
+	@Column(name = "itemname")
+	private Integer companyId;
+	
 	@Column(name = "quantity")
 	private BigDecimal quantity;
 	

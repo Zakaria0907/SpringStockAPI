@@ -1,8 +1,8 @@
-package com.zakaria.inventorymanagement.mappers.impl;
+package com.zakaria.inventorymanagement.mapper.impl;
 
 import com.zakaria.inventorymanagement.dto.ProviderLineOrderDto;
 import com.zakaria.inventorymanagement.entity.ProviderLineOrder;
-import com.zakaria.inventorymanagement.mappers.Mapper;
+import com.zakaria.inventorymanagement.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

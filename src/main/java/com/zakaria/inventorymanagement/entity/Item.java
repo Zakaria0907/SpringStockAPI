@@ -13,6 +13,9 @@ import java.math.BigDecimal;
 @Table(name = "item")
 public class Item extends AbstractEntity{
 	
+	@Column(name = "itemname")
+	private Integer companyId;
+	
 	@Column(name = "itemcode")
 	private String itemCode;
 	

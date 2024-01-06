@@ -14,6 +14,9 @@ import java.util.List;
 @Table(name= "clientorder")
 public class ClientOrder extends AbstractEntity {
 	
+	@Column(name = "itemname")
+	private Integer companyId;
+	
 	@Column(name = "code")
 	private String code;
 	

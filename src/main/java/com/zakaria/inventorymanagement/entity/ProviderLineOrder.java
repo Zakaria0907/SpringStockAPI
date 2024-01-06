@@ -15,6 +15,9 @@ import java.math.BigDecimal;
 @Table(name= "providerlineorder")
 public class ProviderLineOrder extends AbstractEntity {
 	
+	@Column(name = "itemname")
+	private Integer companyId;
+	
 	@Column(name = "quantity")
 	private BigDecimal quantity;
 	

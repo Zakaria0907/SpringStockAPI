@@ -25,8 +25,8 @@ public class Address {
 	@Column(name = "city")
 	private String city;
 	
-	@Column(name = "postal_code")
-	private String postalCode;
+	@Column(name = "zip_code")
+	private String zipCode;
 	
 	@Column(name = "country")
 	private String country;

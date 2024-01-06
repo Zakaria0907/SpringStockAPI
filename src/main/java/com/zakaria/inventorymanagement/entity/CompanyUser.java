@@ -14,11 +14,11 @@ import java.util.List;
 @Table(name= "companyuser")
 public class CompanyUser extends AbstractEntity{
 	
-	@Column(name = "firstname")
-	private String firstname;
-	
 	@Column(name = "lastname")
 	private String lastname;
+	
+	@Column(name = "firstname")
+	private String firstname;
 	
 	@Column(name = "email")
 	private String email;

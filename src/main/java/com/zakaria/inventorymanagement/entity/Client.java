@@ -13,6 +13,9 @@ import java.util.List;
 @Table(name= "client")
 public class Client extends AbstractEntity {
 	
+	@Column(name = "itemname")
+	private Integer companyId;
+	
 	@Column(name = "lastname")
 	private String lastname;
 	
