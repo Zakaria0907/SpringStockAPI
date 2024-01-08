@@ -25,6 +25,10 @@ public class ItemValidator {
 			errors.add("Please enter item code");
 		}
 		
+		if (!StringUtils.hasLength(itemDto.getDescription())) {
+			errors.add("Please enter item description");
+		}
+		
 		if (itemDto.getUnitPriceBeforeTax() == null) {
 			errors.add("Please enter unit price before tax");
 		}
@@ -37,7 +41,7 @@ public class ItemValidator {
 			errors.add("Please enter unit price after tax");
 		}
 		
-		if (itemDto.getCategory() == null) {
+		if (itemDto.getCategory() == null || itemDto.getCategory().getId() == null) {
 			errors.add("Please enter category");
 		}
 		

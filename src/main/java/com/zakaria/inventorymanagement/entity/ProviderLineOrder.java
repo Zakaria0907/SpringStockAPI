@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Table(name= "providerlineorder")
 public class ProviderLineOrder extends AbstractEntity {
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@Column(name = "quantity")

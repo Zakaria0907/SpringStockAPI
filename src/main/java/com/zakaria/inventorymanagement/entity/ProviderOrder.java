@@ -1,5 +1,6 @@
 package com.zakaria.inventorymanagement.entity;
 
+import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,7 @@ import java.util.List;
 @Table(name= "providerorder")
 public class ProviderOrder extends AbstractEntity{
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@Column(name = "code")
@@ -25,6 +26,10 @@ public class ProviderOrder extends AbstractEntity{
 	
 	@Column(name = "orderDate")
 	private Instant orderDate;
+	
+	@Column(name = "orderstatus")
+	@Enumerated(EnumType.STRING)
+	private OrderStatus orderStatus;
 	
 	@ManyToOne
 	@JoinColumn(name = "provider_id")

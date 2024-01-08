@@ -15,12 +15,16 @@ import java.math.BigDecimal;
 @Table(name= "salelineitem")
 public class SaleLineItem extends AbstractEntity {
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@ManyToOne
 	@JoinColumn(name = "sale_id")
 	private Sale sale;
+	
+	@ManyToOne
+	@JoinColumn(name = "item_id")
+	private Item item;
 	
 	@Column(name = "quantity")
 	private BigDecimal quantity;

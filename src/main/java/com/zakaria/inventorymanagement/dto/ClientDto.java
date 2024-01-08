@@ -1,6 +1,7 @@
 package com.zakaria.inventorymanagement.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

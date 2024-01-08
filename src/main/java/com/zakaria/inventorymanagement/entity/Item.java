@@ -3,6 +3,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -13,7 +14,7 @@ import java.math.BigDecimal;
 @Table(name = "item")
 public class Item extends AbstractEntity{
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@Column(name = "itemcode")
@@ -37,4 +38,16 @@ public class Item extends AbstractEntity{
 	@ManyToOne
 	@JoinColumn(name = "idcategory")
 	private Category category;
+	
+	@OneToMany(mappedBy = "item")
+	private List<SaleLineItem> saleLineItems;
+	
+	@OneToMany(mappedBy = "item")
+	private List<ClientLineOrder> clientLineOrders;
+	
+	@OneToMany(mappedBy = "item")
+	private List<ProviderLineOrder> providerLineOrders;
+	
+	@OneToMany(mappedBy = "item")
+	private List<InventoryMovement> inventoryMovements;
 }

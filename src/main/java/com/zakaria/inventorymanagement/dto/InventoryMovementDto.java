@@ -7,7 +7,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-import com.zakaria.inventorymanagement.entity.MovementType;
+import com.zakaria.inventorymanagement.entity.enums.MovementType;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -24,7 +24,7 @@ public class InventoryMovementDto {
 	
 	private BigDecimal quantity;
 	
-	private MovementType movementType; // Assuming you have a MovementTypeDto based on your MovementType enumeration.
+	private MovementType movementType;
 	
 	private ItemDto item;
 }

@@ -14,7 +14,7 @@ import java.util.Date;
 @Table(name= "clientlineorder")
 public class ClientLineOrder extends AbstractEntity {
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@Column(name = "quantity")

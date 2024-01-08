@@ -1,5 +1,6 @@
 package com.zakaria.inventorymanagement.dto;
 
+import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,8 @@ public class ClientOrderDto {
 	private Instant orderDate;
 	
 	private ClientDto client;
+	
+	private OrderStatus orderStatus;
 	
 	private List<ClientLineOrderDto> clientLineOrders;
 }

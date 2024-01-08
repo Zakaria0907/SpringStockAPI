@@ -17,8 +17,8 @@ public class ComapanyUserValidator {
 			errors.add("Please enter firstname");
 			errors.add("Please enter password");
 			errors.add("Please enter address");
+			errors.addAll(AddressValidator.validateAddress(null));
 			return errors;
-			
 		}
 		
 		if (!StringUtils.hasLength(companyUserDto.getLastname())) {
@@ -37,45 +37,31 @@ public class ComapanyUserValidator {
 			errors.add("Please enter date of birth");
 		}
 		
-		if (companyUserDto.getAddress() == null) {
-			errors.add("Please enter address");
-		} else {
-			if (!StringUtils.hasLength(companyUserDto.getAddress().getAddress1())) {
-				errors.add("field address1 is required");
-			}
-			
-			if (!StringUtils.hasLength(companyUserDto.getAddress().getCity())) {
-				errors.add("field city is required");
-			}
-			
-			if (!StringUtils.hasLength(companyUserDto.getAddress().getZipCode())) {
-				errors.add("field zip code is required");
-			}
-			
-			if (!StringUtils.hasLength(companyUserDto.getAddress().getCountry())) {
-				errors.add("field country is required");
-			}
+		if (!StringUtils.hasLength(companyUserDto.getEmail())) {
+			errors.add("Please enter email");
+		}
+		
+		errors.addAll(AddressValidator.validateAddress(companyUserDto.getAddress()));
+		
+//		if (companyUserDto.getAddress() == null) {
+//			errors.add("Please enter address");
+//		} else {
+//			if (!StringUtils.hasLength(companyUserDto.getAddress().getAddress1())) {
+//				errors.add("field address1 is required");
+//			}
+//
+//			if (!StringUtils.hasLength(companyUserDto.getAddress().getCity())) {
+//				errors.add("field city is required");
+//			}
+//
+//			if (!StringUtils.hasLength(companyUserDto.getAddress().getZipCode())) {
+//				errors.add("field zip code is required");
+//			}
+//
+//			if (!StringUtils.hasLength(companyUserDto.getAddress().getCountry())) {
+//				errors.add("field country is required");
+//			}
 			
 			return errors;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		return errors;
-	}
 }

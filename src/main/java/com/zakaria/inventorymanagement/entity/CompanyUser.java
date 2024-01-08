@@ -39,6 +39,6 @@ public class CompanyUser extends AbstractEntity{
 	@JoinColumn(name = "company_id")
 	private Company company;
 	
-	@OneToMany(mappedBy = "companyUser")
+	@OneToMany(fetch= FetchType.EAGER, mappedBy = "companyUser")
 	private List<Role> roles;
 }

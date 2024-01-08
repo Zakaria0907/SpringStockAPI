@@ -15,6 +15,7 @@ public class ClientValidator {
 			errors.add("Please enter firstname");
 			errors.add("Please enter email");
 			errors.add("Please enter phone number");
+			errors.addAll(AddressValidator.validateAddress(null));
 			return errors;
 			
 		}
@@ -34,6 +35,8 @@ public class ClientValidator {
 		if (!StringUtils.hasLength(clientDto.getPhoneNumber())) {
 			errors.add("Please enter phone number");
 		}
+		
+		errors.addAll(AddressValidator.validateAddress(clientDto.getAddress()));
 		return errors;
 	}
 }
