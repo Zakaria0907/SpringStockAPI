@@ -1,4 +1,7 @@
 package com.zakaria.inventorymanagement.repository;
 
-public interface CompanyRepository {
+import com.zakaria.inventorymanagement.entity.Company;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CompanyRepository extends JpaRepository<Company, Integer> {
 }

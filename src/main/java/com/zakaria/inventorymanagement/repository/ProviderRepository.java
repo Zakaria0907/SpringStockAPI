@@ -1,4 +1,7 @@
 package com.zakaria.inventorymanagement.repository;
 
-public interface ProviderRepository {
+import com.zakaria.inventorymanagement.entity.Provider;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProviderRepository extends JpaRepository<Provider, Integer> {
 }
