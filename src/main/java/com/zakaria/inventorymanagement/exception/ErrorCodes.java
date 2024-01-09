@@ -1,4 +1,8 @@
 package com.zakaria.inventorymanagement.exception;
+
+import lombok.Getter;
+
+@Getter
 public enum ErrorCodes {
 	
 	ITEM_NOT_FOUND(1000),
@@ -59,8 +63,5 @@ public enum ErrorCodes {
 		this.code = code;
 	}
 	
-	public int getCode() {
-		return code;
-	}
 }
 

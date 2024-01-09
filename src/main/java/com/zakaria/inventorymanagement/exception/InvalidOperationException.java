@@ -2,9 +2,9 @@ package com.zakaria.inventorymanagement.exception;
 
 import lombok.Getter;
 
+@Getter
 public class InvalidOperationException extends RuntimeException {
 	
-	@Getter
 	private ErrorCodes errorCode;
 	
 	public InvalidOperationException(String message) {
