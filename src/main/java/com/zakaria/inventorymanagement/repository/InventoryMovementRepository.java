@@ -11,7 +11,7 @@ import java.util.List;
 public interface InventoryMovementRepository extends JpaRepository<InventoryMovement, Integer> {
 	
 	@Query("SELECT sum(im.quantity) FROM InventoryMovement im WHERE im.item.id = :ItemId")
-	BigDecimal RealInventoryStock(@Param("ItemId") Integer ItemId);
+	BigDecimal realInventoryStock(@Param("ItemId") Integer ItemId);
 	List<InventoryMovement> findAllByItemId(Integer itemId);
 	
 }

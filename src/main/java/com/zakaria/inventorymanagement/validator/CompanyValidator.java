@@ -4,8 +4,11 @@ import com.zakaria.inventorymanagement.dto.CompanyDto;
 import com.zakaria.inventorymanagement.dto.AddressDto;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+@Service
 public class CompanyValidator {
 	
 	public static List<String> validateCompany(CompanyDto companyDto) {

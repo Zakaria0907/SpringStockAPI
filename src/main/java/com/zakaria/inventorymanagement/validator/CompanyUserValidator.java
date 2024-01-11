@@ -1,13 +1,12 @@
 package com.zakaria.inventorymanagement.validator;
 
-import com.zakaria.inventorymanagement.dto.CategoryDto;
 import com.zakaria.inventorymanagement.dto.CompanyUserDto;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComapanyUserValidator {
+public class CompanyUserValidator {
 	
 	public static List<String> validateCompanyUser(CompanyUserDto companyUserDto) {
 		List<String> errors = new ArrayList<>();

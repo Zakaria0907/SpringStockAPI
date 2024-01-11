@@ -1,5 +1,6 @@
 package com.zakaria.inventorymanagement.dto;
 
+import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,9 +21,15 @@ public class ProviderOrderDto {
 	
 	private String code;
 	
+	private OrderStatus orderStatus;
+	
 	private Instant orderDate;
 	
 	private ProviderDto provider;
 	
 	private List<ProviderLineOrderDto> providerLineOrders;
+	
+	public boolean isOrderDelivered() {
+		return OrderStatus.DELIVERED.equals(this.orderStatus);
+	}
 }

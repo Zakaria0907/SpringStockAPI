@@ -2,8 +2,11 @@ package com.zakaria.inventorymanagement.service;
 
 import com.zakaria.inventorymanagement.dto.UpdateUserPasswordDto;
 import com.zakaria.inventorymanagement.dto.CompanyUserDto;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public interface CompanyUserService {
 	
 	CompanyUserDto save(CompanyUserDto companyUserDto);

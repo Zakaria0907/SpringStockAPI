@@ -11,27 +11,23 @@ import com.zakaria.inventorymanagement.repository.ClientRepository;
 import com.zakaria.inventorymanagement.repository.ClientOrderRepository;
 import com.zakaria.inventorymanagement.service.ClientService;
 import com.zakaria.inventorymanagement.validator.ClientValidator;
-import java.util.List;
-import java.util.stream.Collectors;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
+@Slf4j
 public class ClientServiceImpl implements ClientService {
-	
-	private static final Logger log = LoggerFactory.getLogger(ClientServiceImpl.class);
 	
 	private ClientRepository clientRepository;
 	private ClientOrderRepository clientOrderRepository;
-	
 	private ClientMapperImpl clientMapper;
 	
 	@Autowired
-	public ClientServiceImpl(ClientRepository clientRepository,
-	                         ClientOrderRepository clientOrderRepository,
-	                         ClientMapperImpl clientMapper) {
+	public ClientServiceImpl(ClientRepository clientRepository, ClientOrderRepository clientOrderRepository, ClientMapperImpl clientMapper) {
 		this.clientRepository = clientRepository;
 		this.clientOrderRepository = clientOrderRepository;
 		this.clientMapper = clientMapper;
@@ -42,14 +38,10 @@ public class ClientServiceImpl implements ClientService {
 		List<String> errors = ClientValidator.validateClient(clientDto);
 		if (!errors.isEmpty()) {
 			log.error("Client is not valid {}", clientDto);
-			throw new InvalidEntityException("Invalid client", ErrorCodes.CLIENT_NOT_VALID, errors);
+			throw new InvalidEntityException("The client is not valid", ErrorCodes.CLIENT_NOT_VALID, errors);
 		}
 		
-		return clientMapper.mapTo(
-				clientRepository.save(
-						clientMapper.mapFrom(clientDto)
-				)
-		);
+		return clientMapper.mapTo(clientRepository.save(clientMapper.mapFrom(clientDto)));
 	}
 	
 	@Override
@@ -58,12 +50,12 @@ public class ClientServiceImpl implements ClientService {
 			log.error("Client ID is null");
 			return null;
 		}
-		
-		return clientRepository.findById(id).map(clientMapper::mapTo).orElseThrow(() ->
-				new EntityNotFoundException(
-						"No client with ID = " + id + " found in DB",
+		return clientRepository.findById(id)
+				.map(clientMapper::mapTo)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"No Client with the ID = " + id + " was found in the database",
 						ErrorCodes.CLIENT_NOT_FOUND)
-		);
+				);
 	}
 	
 	@Override
@@ -86,6 +78,4 @@ public class ClientServiceImpl implements ClientService {
 		}
 		clientRepository.deleteById(id);
 	}
-	
-	// Additional methods can be added here as per your requirements.
 }

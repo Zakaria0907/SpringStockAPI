@@ -1,5 +1,6 @@
 package com.zakaria.inventorymanagement.dto;
 
+import com.zakaria.inventorymanagement.entity.enums.MovementSource;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,8 @@ public class InventoryMovementDto {
 	private BigDecimal quantity;
 	
 	private MovementType movementType;
+	
+	private MovementSource movementSource;
 	
 	private ItemDto item;
 }

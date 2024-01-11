@@ -26,6 +26,7 @@ public class InventoryMovement extends AbstractEntity {
 	private BigDecimal quantity;
 	
 	@Column(name = "movementtype")
+	@Enumerated(EnumType.STRING)
 	private MovementType movementType;
 	
 	@Column(name = "mouvementsource")

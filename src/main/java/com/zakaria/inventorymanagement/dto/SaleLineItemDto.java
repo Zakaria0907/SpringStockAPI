@@ -22,4 +22,6 @@ public class SaleLineItemDto {
 	private BigDecimal quantity;
 	
 	private BigDecimal unitPrice;
+	
+	private ItemDto item;
 }

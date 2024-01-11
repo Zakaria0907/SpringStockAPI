@@ -61,8 +61,8 @@ public class CategoryServiceImpl implements CategoryService {
 			return null;
 		}
 		
-		return categoryRepository.findById(id).map(categoryMapper::mapTo).orElseThrow(() ->
-				new EntityNotFoundException(
+		return categoryRepository.findById(id).map(categoryMapper::mapTo)
+				.orElseThrow(() -> new EntityNotFoundException(
 						"No category with ID = " + id + " found in DB",
 						ErrorCodes.CATEGORY_NOT_FOUND)
 		);
@@ -77,8 +77,7 @@ public class CategoryServiceImpl implements CategoryService {
 		
 		return categoryRepository.findCategoryByCode(code)
 				.map(categoryMapper::mapTo)
-				.orElseThrow(() ->
-						new EntityNotFoundException(
+				.orElseThrow(() -> new EntityNotFoundException(
 								"No category with code = " + code + " found in DB",
 								ErrorCodes.CATEGORY_NOT_FOUND)
 				);
@@ -104,6 +103,4 @@ public class CategoryServiceImpl implements CategoryService {
 		}
 		categoryRepository.deleteById(id);
 	}
-	
-	// Additional methods go here, ensure you replace the DTOs, entities, and repository methods to match those available in your project.
 }

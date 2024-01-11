@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +23,6 @@ public class SaleDto {
 	private Instant saleDate;
 	
 	private String comment;
+	
+	private List<SaleLineItemDto> saleLineItems;
 }

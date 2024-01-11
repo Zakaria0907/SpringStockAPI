@@ -28,4 +28,8 @@ public class ClientOrderDto {
 	private OrderStatus orderStatus;
 	
 	private List<ClientLineOrderDto> clientLineOrders;
+	
+	public boolean isOrderDelivered() {
+		return OrderStatus.DELIVERED.equals(this.orderStatus);
+	}
 }
