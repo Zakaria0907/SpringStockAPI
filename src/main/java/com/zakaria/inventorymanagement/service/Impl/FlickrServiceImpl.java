@@ -27,7 +27,7 @@ public class FlickrServiceImpl implements FlickrService {
 	
 	@Value("${flickr.appKey}")
 	private String appKey;
-	
+
 	@Value("${flickr.appSecret}")
 	private String appSecret;
 	
