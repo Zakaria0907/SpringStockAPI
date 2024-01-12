@@ -11,13 +11,14 @@ import com.zakaria.inventorymanagement.exception.ErrorCodes;
 import com.zakaria.inventorymanagement.exception.InvalidEntityException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.Collections;
 import java.util.List;
 
 
 @RestControllerAdvice
-public class RestExceptionHandler {
+public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(EntityNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)

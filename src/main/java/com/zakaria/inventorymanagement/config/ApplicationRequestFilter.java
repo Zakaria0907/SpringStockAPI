@@ -19,28 +19,28 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
 public class ApplicationRequestFilter extends OncePerRequestFilter {
-	
+
 	@Autowired
 	private JWTutils jwtUtil;
-	
+
 	@Autowired
 	private ApplicationUserDetailService userDetailsService;
-	
+
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		
+
 		final String authHeader = request.getHeader("Authorization");
 		String userEmail = null;
 		String jwt = null;
-		String idEntreprise = null;
-		
+		String companyId = null;
+
 		if(authHeader != null && authHeader.startsWith("Bearer ")) {
 			jwt = authHeader.substring(7);
 			userEmail = jwtUtil.extractUsername(jwt);
-			idEntreprise = jwtUtil.extractIdEntreprise(jwt);
+			companyId = jwtUtil.extractCompanyId(jwt);
 		}
-		
+
 		if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 			UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
 			if (jwtUtil.validateToken(jwt, userDetails)) {
@@ -53,7 +53,7 @@ public class ApplicationRequestFilter extends OncePerRequestFilter {
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 			}
 		}
-		MDC.put("idEntreprise", idEntreprise);
+		MDC.put("companyId", companyId);
 		chain.doFilter(request, response);
 	}
 }

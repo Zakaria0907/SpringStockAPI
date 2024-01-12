@@ -2,14 +2,18 @@ package com.zakaria.inventorymanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class InventoryManagementApplication {
 	
 
 	public static void main(String[] args) {
 		SpringApplication.run(InventoryManagementApplication.class, args);
+		System.out.println("Hello World");
 	}
 	
-	// TODO: view devtiro chapter 10.2 to see how to implement mapper, dto, etc.
+	
 }

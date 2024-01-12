@@ -24,10 +24,10 @@ public class JWTutils {
 		return extractClaim(token, Claims::getExpiration);
 	}
 	
-	public String extractIdEntreprise(String token) {
+	public String extractCompanyId(String token) {
 		final Claims claims = extractAllClaims(token);
 		
-		return claims.get("idEntreprise", String.class);
+		return claims.get("companyId", String.class);
 	}
 	
 	public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
@@ -54,7 +54,7 @@ public class JWTutils {
 				.setSubject(userDetails.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-				.claim("idEntreprise", userDetails.getIdEntreprise().toString())
+				.claim("companyId", userDetails.getCompanyId().toString())
 				.signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
 	}
 	

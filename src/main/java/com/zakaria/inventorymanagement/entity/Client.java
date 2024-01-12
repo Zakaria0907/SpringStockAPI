@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name= "client")
 public class Client extends AbstractEntity {
 	
-	@Column(name = "itemname")
+	@Column(name = "company_id")
 	private Integer companyId;
 	
 	@Column(name = "lastname")

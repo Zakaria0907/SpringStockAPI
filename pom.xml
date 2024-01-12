@@ -65,6 +65,16 @@
 			<version>3.0.0</version>
 		</dependency>
 		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
@@ -101,44 +111,44 @@
 					</excludes>
 				</configuration>
 			</plugin>
-<!--			<plugin>-->
-<!--				<groupId>com.github.kongchen</groupId>-->
-<!--				<artifactId>swagger-maven-plugin</artifactId>-->
-<!--				<version>3.1.8</version>-->
-<!--				<configuration>-->
-<!--					<apiSources>-->
-<!--						<apiSource>-->
-<!--							<springmvc>true</springmvc>-->
-<!--							<locations>-->
-<!--								<location>com.zakaria.inventorymanagement.controller.api</location>-->
-<!--							</locations>-->
-<!--							<basePath>http://localhost:8081</basePath>-->
-<!--							<info>-->
-<!--								<title>Swagger Api Documentation for Inventory Management System</title>-->
-<!--								<version>${project.version}</version>-->
-<!--								<description>Swagger Api Documentation for Inventory Management System</description>-->
-<!--								<contact>-->
-<!--									<email>zakaria.elmanar@gmail.com</email>-->
-<!--									<name>Zakaria El Manar</name>-->
-<!--									<url>https://www.linkedin.com/in/zakaria-el-manar-el-bouanani/</url>-->
-<!--								</contact>-->
-<!--							</info>-->
-<!--							<outputPath>${project.build.directory}</outputPath>-->
-<!--							<outputFormats>json</outputFormats>-->
-<!--							<swaggerApiReader>com.github.kongchen.swagger.docgen.reader.SpringMvcApiReader</swaggerApiReader>-->
-<!--							<swaggerDirectory>${project.build.directory}</swaggerDirectory>-->
-<!--						</apiSource>-->
-<!--					</apiSources>-->
-<!--				</configuration>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<phase>install</phase>-->
-<!--						<goals>-->
-<!--							<goal>generate</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--			</plugin>-->
+			<plugin>
+				<groupId>com.github.kongchen</groupId>
+				<artifactId>swagger-maven-plugin</artifactId>
+				<version>3.1.8</version>
+				<configuration>
+					<apiSources>
+						<apiSource>
+							<springmvc>true</springmvc>
+							<locations>
+								<location>com.zakaria.inventorymanagement.controller.api</location>
+							</locations>
+							<basePath>http://localhost:8081</basePath>
+							<info>
+								<title>Swagger Api Documentation for Inventory Management System</title>
+								<version>${project.version}</version>
+								<description>Swagger Api Documentation for Inventory Management System</description>
+								<contact>
+									<email>zakaria.elmanar@gmail.com</email>
+									<name>Zakaria El Manar</name>
+									<url>https://www.linkedin.com/in/zakaria-el-manar-el-bouanani/</url>
+								</contact>
+							</info>
+							<outputPath>${project.build.directory}</outputPath>
+							<outputFormats>json</outputFormats>
+							<swaggerApiReader>com.github.kongchen.swagger.docgen.reader.SpringMvcApiReader</swaggerApiReader>
+							<swaggerDirectory>${project.build.directory}</swaggerDirectory>
+						</apiSource>
+					</apiSources>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

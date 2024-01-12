@@ -27,7 +27,7 @@ public interface ItemApi {
 	ItemDto save(@RequestBody ItemDto dto);
 	
 	@GetMapping(value = APP_ROOT + "/items/{idItem}", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(value = "Search for an item by ID", notes = "This method allows searching for an item by its ID", response = ItemDto.class)
+	@ApiOperation(value = "Find an item by ID", notes = "This method allows finding an item by its ID", response = ItemDto.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "The item was found in the database"),
 			@ApiResponse(code = 404, message = "No item exists in the database with the provided ID")
@@ -35,7 +35,7 @@ public interface ItemApi {
 	ItemDto findById(@PathVariable("idItem") Integer id);
 	
 	@GetMapping(value = APP_ROOT + "/items/filter/{codeItem}", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(value = "Search for an item by CODE", notes = "This method allows searching for an item by its CODE", response = ItemDto.class)
+	@ApiOperation(value = "Find an item by CODE", notes = "This method allows finding an item by its CODE", response = ItemDto.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "The item was found in the database"),
 			@ApiResponse(code = 404, message = "No item exists in the database with the provided CODE")
@@ -43,7 +43,7 @@ public interface ItemApi {
 	ItemDto findByCode(@PathVariable("codeItem") String codeItem);
 	
 	@GetMapping(value = APP_ROOT + "/items/all", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(value = "Return all items list", notes = "This method allows searching and returning the list of all items existing in the database", responseContainer = "List<ItemDto>")
+	@ApiOperation(value = "Return the list of all items", notes = "This method allows searching and returning the list of all items existing in the database", responseContainer = "List<ItemDto>")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "The list of items / An empty list")
 	})
@@ -53,7 +53,7 @@ public interface ItemApi {
 	List<SaleLineItemDto> findSalesHistory(@PathVariable("idItem") Integer idItem);
 	
 	@GetMapping(value = APP_ROOT + "/items/history/customerorder/{idItem}", produces = MediaType.APPLICATION_JSON_VALUE)
-	List<ClientOrderDto> findCustomerOrderHistory(@PathVariable("idItem") Integer idItem);
+	List<ClientLineOrderDto> findCustomerOrderHistory(@PathVariable("idItem") Integer idItem);
 	
 	@GetMapping(value = APP_ROOT + "/items/history/supplierorder/{idItem}", produces = MediaType.APPLICATION_JSON_VALUE)
 	List<ProviderLineOrderDto> findSupplierOrderHistory(@PathVariable("idItem") Integer idItem);
@@ -67,5 +67,4 @@ public interface ItemApi {
 			@ApiResponse(code = 200, message = "The item was deleted")
 	})
 	void delete(@PathVariable("idItem") Integer id);
-	
 }

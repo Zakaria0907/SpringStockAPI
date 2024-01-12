@@ -7,20 +7,20 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 
+@Getter
+@Setter
 public class ExtendedUser extends User {
 	
-	@Getter
-	@Setter
-	private Integer idEntreprise;
+	private Integer companyId;
 	
 	public ExtendedUser(String username, String password,
 	                    Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
 	}
 	
-	public ExtendedUser(String username, String password, Integer idEntreprise,
+	public ExtendedUser(String username, String password, Integer companyId,
 	                    Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
-		this.idEntreprise = idEntreprise;
+		this.companyId = companyId;
 	}
 }

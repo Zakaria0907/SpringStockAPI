@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     url: jdbc:postgresql://localhost:5432/stockmanagementdb
     username: postgres
@@ -12,6 +14,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 server:
   port: 8081
@@ -21,3 +26,4 @@ flickr:
   apiSecret: 3c5d4890755b348e
   appKey: 72157720906167037-d07ceb641d8113e0
   appSecret: d81d72e1c1f5328a
+

@@ -67,17 +67,17 @@ public class FlickrConfig {
 //    return flickr;
 //  }
 	
-//	@Bean
-//	public Flickr getFlickr2() {
-//		Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
-//		Auth auth = new Auth();
-//		auth.setPermission(Permission.READ);
-//		auth.setToken(appKey);
-//		auth.setTokenSecret(appSecret);
-//		RequestContext requestContext = RequestContext.getRequestContext();
-//		requestContext.setAuth(auth);
-//		flickr.setAuth(auth);
-//		return flickr;
-//	}
+	@Bean
+	public Flickr getFlickr2() {
+		Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
+		Auth auth = new Auth();
+		auth.setPermission(Permission.READ);
+		auth.setToken(appKey);
+		auth.setTokenSecret(appSecret);
+		RequestContext requestContext = RequestContext.getRequestContext();
+		requestContext.setAuth(auth);
+		flickr.setAuth(auth);
+		return flickr;
+	}
 	
 }
