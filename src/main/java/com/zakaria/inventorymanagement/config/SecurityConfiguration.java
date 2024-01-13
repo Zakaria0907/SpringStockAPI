@@ -35,8 +35,8 @@ public class SecurityConfiguration {
 	@Autowired
 	private ApplicationUserDetailService applicationUserDetailService;
 
-	@Autowired
-	private ApplicationRequestFilter applicationRequestFilter;
+//	@Autowired
+//	private ApplicationRequestFilter applicationRequestFilter;
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -68,7 +68,7 @@ public class SecurityConfiguration {
 		http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest()
 				.permitAll());
 		
-		http.addFilterBefore(applicationRequestFilter, UsernamePasswordAuthenticationFilter.class);
+//		http.addFilterBefore(applicationRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 	}
 	

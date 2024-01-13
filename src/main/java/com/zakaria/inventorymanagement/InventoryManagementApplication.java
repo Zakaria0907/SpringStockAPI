@@ -15,5 +15,4 @@ public class InventoryManagementApplication {
 		System.out.println("Hello World");
 	}
 	
-	
 }
