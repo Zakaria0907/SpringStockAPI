@@ -26,7 +26,7 @@ public class CategoryController {
 	}
 	
 	@GetMapping(path = "/id/{category-id}")
-	public CategoryDto findById( @PathVariable("category-id") Integer idCategory) {
+	public CategoryDto findById(@PathVariable("category-id") Integer idCategory) {
 		return categoryService.findById(idCategory);
 	}
 
