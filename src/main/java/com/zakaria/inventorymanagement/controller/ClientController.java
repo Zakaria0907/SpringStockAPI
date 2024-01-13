@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "Client", description = "Client API")
 @RestController
-@RequestMapping(path = "/v1/client")
+@RequestMapping(path = "/api/client")
 @RequiredArgsConstructor
 public class ClientController  {
 

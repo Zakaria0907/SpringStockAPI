@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @Tag(name = "Photo", description = "Photo API")
 @RestController
-@RequestMapping(path = "/v1/photo")
+@RequestMapping(path = "/api/photo")
 @RequiredArgsConstructor
 public class PhotoController {
 

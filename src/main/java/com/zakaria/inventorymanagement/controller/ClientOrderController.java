@@ -15,7 +15,7 @@ import java.util.List;
 
 @Tag(name = "Client Order", description = "ClientOrder API")
 @RestController
-@RequestMapping(path = "/v1/client/order")
+@RequestMapping(path = "/api/client/order")
 @RequiredArgsConstructor
 public class ClientOrderController {
 

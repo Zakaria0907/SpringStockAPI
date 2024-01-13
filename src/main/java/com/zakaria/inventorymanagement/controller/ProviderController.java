@@ -10,7 +10,7 @@ import java.util.List;
 
 @Tag(name = "Provider", description = "Provider API")
 @RestController
-@RequestMapping(path = "/v1/provider")
+@RequestMapping(path = "/api/provider")
 @RequiredArgsConstructor
 public class ProviderController {
 

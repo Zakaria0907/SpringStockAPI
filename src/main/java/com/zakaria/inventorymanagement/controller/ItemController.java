@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Item", description = "Item API")
 @RestController
-@RequestMapping(path = "/v1/item")
+@RequestMapping(path = "/api/item")
 @RequiredArgsConstructor
 public class ItemController {
 

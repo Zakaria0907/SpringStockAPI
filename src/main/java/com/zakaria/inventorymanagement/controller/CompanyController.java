@@ -11,7 +11,7 @@ import java.util.List;
 
 @Tag(name = "Company", description = "Company API")
 @RestController
-@RequestMapping(path = "/v1/company")
+@RequestMapping(path = "/api/company")
 @RequiredArgsConstructor
 public class CompanyController  {
 

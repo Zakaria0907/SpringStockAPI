@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "Company User", description = "Company User API")
 @RestController
-@RequestMapping(path = "/v1/user/")
+@RequestMapping(path = "/api/user/")
 @RequiredArgsConstructor
 public class CompanyUserController  {
 

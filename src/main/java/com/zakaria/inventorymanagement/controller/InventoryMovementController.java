@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "Inventory Movement", description = "Inventory Movement API")
 @RestController
-@RequestMapping(path = "/v1/inventory_movement")
+@RequestMapping(path = "/api/inventory_movement")
 @RequiredArgsConstructor
 public class InventoryMovementController{
 
