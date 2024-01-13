@@ -12,7 +12,6 @@ public interface InventoryMovementRepository extends JpaRepository<InventoryMove
 	
 	@Query("SELECT sum(im.quantity) FROM InventoryMovement im WHERE im.item.id = :ItemId")
 	BigDecimal realInventoryStock(@Param("ItemId") Integer ItemId);
-	
-	List<InventoryMovement> findAllByItemId(@Param("ItemId") Integer itemId);
+	List<InventoryMovement> findAllByItemId(Integer itemId);
 	
 }

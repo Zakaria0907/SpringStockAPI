@@ -1,6 +1,7 @@
 package com.zakaria.inventorymanagement.entity;
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

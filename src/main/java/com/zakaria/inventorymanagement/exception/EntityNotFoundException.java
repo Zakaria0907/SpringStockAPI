@@ -1,7 +1,7 @@
 package com.zakaria.inventorymanagement.exception;
 
 import lombok.Getter;
-//test
+
 @Getter
 public class EntityNotFoundException extends RuntimeException {
 	

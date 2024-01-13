@@ -1,12 +1,12 @@
 package com.zakaria.inventorymanagement.entity;
 
 import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.List;
 

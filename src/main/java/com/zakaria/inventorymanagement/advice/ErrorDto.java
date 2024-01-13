@@ -22,7 +22,7 @@ public class ErrorDto {
 	private ErrorCodes code;
 	
 	private String message;
-	
-	private List<String> errors = new ArrayList<>();
+
+	//private List<String> errors = new ArrayList<>();
 	
 }

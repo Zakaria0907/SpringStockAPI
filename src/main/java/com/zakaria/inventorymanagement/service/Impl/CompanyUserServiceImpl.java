@@ -12,7 +12,6 @@ import com.zakaria.inventorymanagement.repository.CompanyUserRepository;
 import com.zakaria.inventorymanagement.service.CompanyUserService;
 import com.zakaria.inventorymanagement.validator.CompanyUserValidator;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -26,13 +25,12 @@ import org.springframework.util.StringUtils;
 public class CompanyUserServiceImpl implements CompanyUserService {
 	
 	private CompanyUserRepository companyUserRepository; // Define your repository here
-	private PasswordEncoder passwordEncoder; // Define your password encoder here
+
 	private CompanyUserMapperImpl companyUserMapper; // Define your mapper here
 	private CompanyUserValidator companyUserValidator; // Define your validator here
 	
-	public CompanyUserServiceImpl(CompanyUserRepository companyUserRepository, PasswordEncoder passwordEncoder, CompanyUserMapperImpl companyUserMapper) {
+	public CompanyUserServiceImpl(CompanyUserRepository companyUserRepository,  CompanyUserMapperImpl companyUserMapper) {
 		this.companyUserRepository = companyUserRepository;
-		this.passwordEncoder = passwordEncoder;
 		this.companyUserMapper = companyUserMapper;
 	}
 	
@@ -48,8 +46,7 @@ public class CompanyUserServiceImpl implements CompanyUserService {
 			throw new InvalidEntityException("Another user with the same email already exists", ErrorCodes.USER_ALREADY_EXISTS,
 					Collections.singletonList("Another user with the same email already exists in the database"));
 		}
-		
-		companyUserDto.setPassword(passwordEncoder.encode(companyUserDto.getPassword()));
+
 		companyUserRepository.save(companyUserMapper.mapFrom(companyUserDto));
 		
 		return companyUserDto;
@@ -111,7 +108,6 @@ public class CompanyUserServiceImpl implements CompanyUserService {
 		}
 		
 		CompanyUser companyUser = companyUserOptional.get();
-		companyUser.setPassword(passwordEncoder.encode(updateUserPasswordDto.getPassword()));
 		
 		return companyUserMapper.mapTo(companyUserRepository.save(companyUser));
 	}
