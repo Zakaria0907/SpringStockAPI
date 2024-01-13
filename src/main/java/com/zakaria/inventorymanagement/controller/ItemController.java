@@ -55,7 +55,7 @@ public class ItemController {
 		return itemService.findClientOrderHistory(idItem);
 	}
 	
-	@GetMapping(path = "/customer/order_history/{item-id}")
+	@GetMapping(path = "/provider/order_history/{item-id}")
 	public List<ProviderLineOrderDto> findSupplierOrderHistory(@PathVariable("item-id") Integer idItem) { // Changed from LigneCommandeFournisseurDto
 		return itemService.findProviderOrderHistory(idItem);
 	}
