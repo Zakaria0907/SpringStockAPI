@@ -7,10 +7,12 @@ import com.zakaria.inventorymanagement.dto.SaleLineItemDto;
 import com.zakaria.inventorymanagement.service.ItemService;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Item", description = "Item API")
 @RestController
 @RequestMapping(path = "/v1/item")
 @RequiredArgsConstructor

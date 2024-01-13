@@ -4,6 +4,7 @@ import com.zakaria.inventorymanagement.dto.ClientLineOrderDto;
 import com.zakaria.inventorymanagement.dto.ClientOrderDto;
 import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import com.zakaria.inventorymanagement.service.ClientOrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Tag(name = "Client Order", description = "ClientOrder API")
 @RestController
 @RequestMapping(path = "/v1/client/order")
 @RequiredArgsConstructor

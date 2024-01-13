@@ -3,12 +3,14 @@ package com.zakaria.inventorymanagement.controller;
 import com.zakaria.inventorymanagement.dto.ClientDto;
 import com.zakaria.inventorymanagement.service.ClientService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Client", description = "Client API")
 @RestController
 @RequestMapping(path = "/v1/client")
 @RequiredArgsConstructor

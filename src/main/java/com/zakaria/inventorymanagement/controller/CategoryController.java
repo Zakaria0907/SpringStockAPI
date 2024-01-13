@@ -3,11 +3,13 @@ package com.zakaria.inventorymanagement.controller;
 import com.zakaria.inventorymanagement.dto.CategoryDto;
 import com.zakaria.inventorymanagement.service.CategoryService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@Tag(name = "Category", description = "Category API")
 @RestController
 @RequestMapping(path = "/v1/category")
 @RequiredArgsConstructor

@@ -2,12 +2,14 @@ package com.zakaria.inventorymanagement.controller;
 
 import com.zakaria.inventorymanagement.dto.CompanyDto;
 import com.zakaria.inventorymanagement.service.CompanyService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Company", description = "Company API")
 @RestController
 @RequestMapping(path = "/v1/company")
 @RequiredArgsConstructor

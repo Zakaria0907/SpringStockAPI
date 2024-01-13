@@ -4,6 +4,7 @@ import com.zakaria.inventorymanagement.dto.ProviderLineOrderDto;
 import com.zakaria.inventorymanagement.dto.ProviderOrderDto;
 import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
 import com.zakaria.inventorymanagement.service.ProviderOrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Tag(name = "Provider Order", description = "ProviderOrder API")
 @RestController
 @RequestMapping(path = "/v1/provider/order")
 @RequiredArgsConstructor

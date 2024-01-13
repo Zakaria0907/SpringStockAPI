@@ -3,12 +3,14 @@ package com.zakaria.inventorymanagement.controller;
 import com.zakaria.inventorymanagement.dto.CompanyUserDto;
 import com.zakaria.inventorymanagement.dto.UpdateUserPasswordDto;
 import com.zakaria.inventorymanagement.service.CompanyUserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Company User", description = "Company User API")
 @RestController
 @RequestMapping(path = "/v1/user/")
 @RequiredArgsConstructor

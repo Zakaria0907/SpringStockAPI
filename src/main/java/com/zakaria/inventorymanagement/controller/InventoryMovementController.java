@@ -2,6 +2,7 @@ package com.zakaria.inventorymanagement.controller;
 
 import com.zakaria.inventorymanagement.dto.InventoryMovementDto;
 import com.zakaria.inventorymanagement.service.InventoryMovementService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-
+@Tag(name = "Inventory Movement", description = "Inventory Movement API")
 @RestController
 @RequestMapping(path = "/v1/inventory_movement")
 @RequiredArgsConstructor

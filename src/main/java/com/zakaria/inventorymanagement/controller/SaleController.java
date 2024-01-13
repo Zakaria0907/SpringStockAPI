@@ -4,10 +4,12 @@ import com.zakaria.inventorymanagement.dto.SaleDto;
 import com.zakaria.inventorymanagement.service.SaleService;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Sale", description = "Sale API")
 @RestController
 @RequestMapping(path = "/v1/sale")
 @RequiredArgsConstructor

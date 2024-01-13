@@ -2,11 +2,13 @@ package com.zakaria.inventorymanagement.controller;
 
 import com.zakaria.inventorymanagement.dto.ProviderDto;
 import com.zakaria.inventorymanagement.service.ProviderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Provider", description = "Provider API")
 @RestController
 @RequestMapping(path = "/v1/provider")
 @RequiredArgsConstructor
