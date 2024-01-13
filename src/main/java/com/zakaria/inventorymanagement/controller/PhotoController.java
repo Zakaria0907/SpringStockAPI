@@ -4,10 +4,7 @@ import com.flickr4java.flickr.FlickrException;
 import com.zakaria.inventorymanagement.service.strategy.StrategyPhotoContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -24,11 +21,11 @@ public class PhotoController {
 		this.strategyPhotoContext = strategyPhotoContext;
 	}
 	
-	@PostMapping(path = "/save")
-	public Object savePhoto(@PathVariable("order-id") String context,
-	                        @PathVariable("order-id") Integer id,
-	                        @PathVariable("order-id") MultipartFile photo,
-	                        @PathVariable("order-id") String title) throws IOException, FlickrException {
+	@PostMapping(path = "/save/{context}/{id}/{title}")
+	public Object savePhoto(@PathVariable("context") String context,
+	                        @PathVariable("id") Integer id,
+	                        @RequestPart("file") MultipartFile photo,
+	                        @PathVariable("title") String title) throws IOException, FlickrException {
 		return strategyPhotoContext.savePhoto(context, id, photo.getInputStream(), title);
 	}
 }
