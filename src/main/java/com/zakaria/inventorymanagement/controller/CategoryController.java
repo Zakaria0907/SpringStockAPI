@@ -25,12 +25,12 @@ public class CategoryController {
 		return categoryService.save(dto);
 	}
 	
-	@GetMapping(path = "/{category-id}")
+	@GetMapping(path = "/id/{category-id}")
 	public CategoryDto findById( @PathVariable("category-id") Integer idCategory) {
 		return categoryService.findById(idCategory);
 	}
 
-	@GetMapping(path = "/{category-code}")
+	@GetMapping(path = "/code/{category-code}")
 	public CategoryDto findByCode(@PathVariable("category-code") String codeCategory) {
 		return categoryService.findByCode(codeCategory);
 	}
