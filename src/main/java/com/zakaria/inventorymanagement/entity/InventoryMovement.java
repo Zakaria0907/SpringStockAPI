@@ -1,9 +1,9 @@
 package com.zakaria.inventorymanagement.entity;
 import com.zakaria.inventorymanagement.entity.enums.MovementSource;
 import com.zakaria.inventorymanagement.entity.enums.MovementType;
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 

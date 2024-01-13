@@ -1,8 +1,8 @@
 package com.zakaria.inventorymanagement.entity;
 import com.zakaria.inventorymanagement.entity.enums.OrderStatus;
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.List;
 

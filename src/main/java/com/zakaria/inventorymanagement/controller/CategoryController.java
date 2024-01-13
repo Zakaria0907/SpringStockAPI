@@ -1,16 +1,17 @@
 package com.zakaria.inventorymanagement.controller;
 
-import com.zakaria.inventorymanagement.controller.api.CategoryApi;
 import com.zakaria.inventorymanagement.dto.CategoryDto;
 import com.zakaria.inventorymanagement.service.CategoryService;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class CategoryController implements CategoryApi {
+@RequestMapping(path = "/v1/category")
+@RequiredArgsConstructor
+public class CategoryController {
 	
 	private CategoryService categoryService;
 	
@@ -18,29 +19,29 @@ public class CategoryController implements CategoryApi {
 	public CategoryController(CategoryService categoryService) {
 		this.categoryService = categoryService;
 	}
-	
-	@Override
-	public CategoryDto save(CategoryDto dto) {
+
+	@PostMapping(path = "/save")
+	public CategoryDto save(@RequestBody CategoryDto dto) {
 		return categoryService.save(dto);
 	}
 	
-	@Override
-	public CategoryDto findById(Integer idCategory) {
+	@GetMapping(path = "/{category-id}")
+	public CategoryDto findById( @PathVariable("category-id") Integer idCategory) {
 		return categoryService.findById(idCategory);
 	}
-	
-	@Override
-	public CategoryDto findByCode(String codeCategory) {
+
+	@GetMapping(path = "/{category-code}")
+	public CategoryDto findByCode(@PathVariable("category-code") String codeCategory) {
 		return categoryService.findByCode(codeCategory);
 	}
 	
-	@Override
+	@GetMapping(path = "/all")
 	public List<CategoryDto> findAll() {
 		return categoryService.findAll();
 	}
 	
-	@Override
-	public void delete(Integer id) {
+	@DeleteMapping(path = "/delete/{category-id}")
+	public void delete(@PathVariable("category-id") Integer id) {
 		categoryService.delete(id);
 	}
 }
