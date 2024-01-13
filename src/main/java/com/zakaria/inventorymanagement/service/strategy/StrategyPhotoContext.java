@@ -33,19 +33,19 @@ public class StrategyPhotoContext {
 	private void determinContext(String context) {
 		final String beanName = context + "Strategy";
 		switch (context) {
-			case "article":
+			case "item":
 				strategy = beanFactory.getBean(beanName, SaveItemPhoto.class);
 				break;
 			case "client" :
 				strategy = beanFactory.getBean(beanName, SaveClientPhoto.class);
 				break;
-			case "fournisseur" :
+			case "provider" :
 				strategy = beanFactory.getBean(beanName, SaveProviderPhoto.class);
 				break;
-			case "entreprise" :
+			case "company" :
 				strategy = beanFactory.getBean(beanName, SaveCompanyPhoto.class);
 				break;
-			case "utilisateur" :
+			case "companyUser" :
 				strategy = beanFactory.getBean(beanName, SaveCompanyUserPhoto.class);
 				break;
 			default: throw new InvalidOperationException("Unknown context for saving photo...", ErrorCodes.UNKNOWN_CONTEXT);
