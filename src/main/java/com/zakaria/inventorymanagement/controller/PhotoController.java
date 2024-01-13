@@ -5,6 +5,7 @@ import com.zakaria.inventorymanagement.service.strategy.StrategyPhotoContext;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,10 +24,10 @@ public class PhotoController {
 		this.strategyPhotoContext = strategyPhotoContext;
 	}
 	
-	@PostMapping(path = "/save/{context}/{id}/{title}")
+	@PostMapping(path = "/save/{context}/{id}/{title}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public Object savePhoto(@PathVariable("context") String context,
 	                        @PathVariable("id") Integer id,
-	                        @RequestPart("file") MultipartFile photo,
+	                        @RequestParam("file") MultipartFile photo,
 	                        @PathVariable("title") String title) throws IOException, FlickrException {
 		return strategyPhotoContext.savePhoto(context, id, photo.getInputStream(), title);
 	}
