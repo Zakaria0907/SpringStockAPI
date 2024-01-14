@@ -1,6 +1,8 @@
 # SpringStockAPI - Open Source
 API doc: https://springstockapi.up.railway.app/
 
+SpringStockAPI is a RESTful inventory management API using Spring Boot, with robust documentation via Swagger UI, hosted on Railway, and connected to a PostgreSQL database on Vercel.
+
 ## Tech Stack
 
 - Springboot 2.7
